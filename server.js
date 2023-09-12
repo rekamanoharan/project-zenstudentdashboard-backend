@@ -10,7 +10,7 @@ dotenv.config();
 
 /* for React Client (withCredentials) */
 const corsOptions = {
-  origin: "http://localhost:3000", // Replace with your frontend domain
+  origin: "https://shiny-pithivier-9deb1a.netlify.app/login", // Replace with your frontend domain
   methods: ["GET", "POST", "PUT", "DELETE"],
 };
 app.use(cors(corsOptions));
