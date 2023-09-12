@@ -10,7 +10,7 @@ dotenv.config();
 
 /* for React Client (withCredentials) */
 const corsOptions = {
-  origin: "https://master--shiny-pithivier-9deb1a.netlify.app/login", // Replace with your frontend domain
+  origin: "https://master--shiny-pithivier-9deb1a.netlify.app", // Replace with your frontend domain
   methods: ["GET", "POST", "PUT", "DELETE"],
 };
 app.use(cors(corsOptions));
@@ -20,13 +20,10 @@ app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header(
     "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method, Access-Control-Request-Headers"
+    " X-Requested-With, Content-Type,  Authorization"
   );
-  res.header(
-    "Access-Control-Allow-Methods",
-    "GET, POST, HEAD,OPTIONS,PUT, DELETE"
-  );
-  res.header("Access-Control-Allow-Credentials", "true");
+  res.header("Access-Control-Allow-Methods", "GET, POST,OPTIONS, DELETE");
+  // res.header("Access-Control-Allow-Credentials", "true");
   next();
 });
 
